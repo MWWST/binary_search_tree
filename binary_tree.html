@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+
+	function tree(val, top){
+		this.left= null;
+		this.right =null;
+		this.val = val;
+		this.add= function (val,top){
+			if(top == null ){
+				top = this;
+				return;
+			}
+			else {
+				console.log("recursion");
+				if (val<top.val && top.left == null){
+					top.left=this;
+					console.log("left:"+this.val);
+					
+					return;
+				}
+				else if (val>top.val && top.right == null){
+					top.right =this;
+					console.log("right:"+this.val);
+					return;
+				}
+				else {
+					this.add(val,this);
+				}
+
+				}
+
+
+
+			}
+
+		}
+
+</script>
+</body>
+</html>
